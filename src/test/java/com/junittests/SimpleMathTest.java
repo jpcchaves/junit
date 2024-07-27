@@ -135,4 +135,26 @@ public class SimpleMathTest {
 
     assertNotEquals(unexpected, result);
   }
+
+  @Test
+  void testSquareRoot() {
+
+    SimpleMath sm = new SimpleMath();
+
+    double firstNumber = 16.0D;
+
+    double expected = 4.0D;
+    double unexpected = 12.0D;
+
+    Double result = sm.squareRoot(firstNumber);
+
+    assertNotNull(result);
+
+    assertEquals(
+        expected,
+        result,
+        () -> String.format("The square root did not produce %s", expected));
+
+    assertNotEquals(unexpected, result);
+  }
 }
