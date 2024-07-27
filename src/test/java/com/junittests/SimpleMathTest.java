@@ -2,11 +2,10 @@ package com.junittests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class SimpleMathTest {
+  SimpleMath sm;
 
   // Test naming pattern
   // test[System Under Test]_[Condition or State Change]-[Expected Result]
@@ -15,11 +14,29 @@ public class SimpleMathTest {
   // AAA => Arrange, Act, Assert
   /// Given, When, Then
 
+  @BeforeAll
+  static void setup() {
+    System.out.println("Before all");
+  }
+
+  @AfterAll
+  static void cleanup() {
+    System.out.println("After all");
+  }
+
+  @BeforeEach
+  void beforeEachMethod() {
+    sm = new SimpleMath();
+  }
+
+  @AfterEach
+  void afterEachMethod() {
+    System.out.println("After each method");
+  }
+
   @Test
   void testSum_WhenSixDotDotIsAddedByTwo_ShouldReturnEightDotTwo() {
-    // Given
-    SimpleMath sm = new SimpleMath();
-
+    // Give
     double firstNumber = 6.2D;
     double secondNumber = 2D;
 
@@ -46,8 +63,6 @@ public class SimpleMathTest {
   @Test
   void testSubtraction() {
 
-    SimpleMath sm = new SimpleMath();
-
     double firstNumber = 6.2D;
 
     double secondNumber = 2D;
@@ -72,8 +87,6 @@ public class SimpleMathTest {
 
   @Test
   void testMultiplication() {
-
-    SimpleMath sm = new SimpleMath();
 
     double firstNumber = 6.2D;
     double secondNumber = 2D;
@@ -110,8 +123,6 @@ public class SimpleMathTest {
   @Test
   void testDivision() {
 
-    SimpleMath sm = new SimpleMath();
-
     double firstNumber = 6.2D;
     double secondNumber = 2D;
 
@@ -137,8 +148,6 @@ public class SimpleMathTest {
   @Test
   void testMean() {
 
-    SimpleMath sm = new SimpleMath();
-
     double firstNumber = 6.2D;
     double secondNumber = 2D;
 
@@ -160,8 +169,6 @@ public class SimpleMathTest {
 
   @Test
   void testSquareRoot() {
-
-    SimpleMath sm = new SimpleMath();
 
     double firstNumber = 16.0D;
 
