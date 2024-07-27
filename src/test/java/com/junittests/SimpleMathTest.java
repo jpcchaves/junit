@@ -111,4 +111,28 @@ public class SimpleMathTest {
 
     assertNotEquals(unexpected, result);
   }
+
+  @Test
+  void testMean() {
+
+    SimpleMath sm = new SimpleMath();
+
+    double firstNumber = 6.2D;
+    double secondNumber = 2D;
+
+    Double result = sm.mean(firstNumber, secondNumber);
+
+    Double expected = 4.1D;
+
+    Double unexpected = 9.2D;
+
+    assertNotNull(result);
+
+    assertEquals(
+        expected,
+        result,
+        String.format("The mean did not produce %s", expected));
+
+    assertNotEquals(unexpected, result);
+  }
 }
