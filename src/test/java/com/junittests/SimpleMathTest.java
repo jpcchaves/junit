@@ -2,12 +2,16 @@ package com.junittests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class SimpleMathTest {
 
+  // Test naming pattern
+  // test[System Under Test]_[Condition or State Change]-[Expected Result]
+
   @Test
-  void testSum() {
+  void testSum_WhenSixDotDotIsAddedByTwo_ShouldReturnEightDotTwo() {
     SimpleMath sm = new SimpleMath();
 
     double firstNumber = 6.2D;
@@ -83,6 +87,15 @@ public class SimpleMathTest {
                 firstNumber, secondNumber, expected));
 
     assertNotEquals(unexpected, result);
+  }
+
+  @Test
+  @DisplayName(
+      "Test division when first number is divided by zero should return"
+          + " ArithmeticException")
+  void
+      testDivision_When_FirstNumberIsDividedByZero_ShouldReturnArithmeticException() {
+    fail();
   }
 
   @Test
