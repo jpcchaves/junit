@@ -10,18 +10,25 @@ public class SimpleMathTest {
   // Test naming pattern
   // test[System Under Test]_[Condition or State Change]-[Expected Result]
 
+  // Test patterns
+  // AAA => Arrange, Act, Assert
+  /// Given, When, Then
+
   @Test
   void testSum_WhenSixDotDotIsAddedByTwo_ShouldReturnEightDotTwo() {
+    // Given
     SimpleMath sm = new SimpleMath();
 
     double firstNumber = 6.2D;
     double secondNumber = 2D;
 
-    Double result = sm.sum(firstNumber, secondNumber);
-
     Double expected = 8.2D;
     Double unexpected = 9.2D;
 
+    // When
+    Double result = sm.sum(firstNumber, secondNumber);
+
+    // Then
     assertEquals(
         expected,
         result,
