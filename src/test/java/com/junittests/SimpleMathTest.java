@@ -52,8 +52,35 @@ public class SimpleMathTest {
         result,
         () ->
             String.format(
-                "%s - %s did dskjahfkhdaskfhsdakjfhkjasdhkjfhd not produce %s!",
-                firstNumber, secondNumber, result));
+                "%s - %s did not produce %s!",
+                firstNumber, secondNumber, expected));
+
+    assertNotEquals(unexpected, result);
+  }
+
+  @Test
+  void testMultiplication() {
+
+    SimpleMath sm = new SimpleMath();
+
+    double firstNumber = 6.2D;
+    double secondNumber = 2D;
+
+    Double result = sm.multiplication(firstNumber, secondNumber);
+
+    Double expected = 12.4D;
+
+    Double unexpected = 9.2D;
+
+    assertNotNull(result);
+
+    assertEquals(
+        expected,
+        result,
+        () ->
+            String.format(
+                "%s * %s did not " + "produce %s!",
+                firstNumber, secondNumber, expected));
 
     assertNotEquals(unexpected, result);
   }
