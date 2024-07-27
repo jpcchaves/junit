@@ -2,6 +2,7 @@ package com.junittests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -100,6 +101,7 @@ public class SimpleMathTest {
   @DisplayName(
       "Test division when first number is divided by zero should return"
           + " ArithmeticException")
+  @Disabled("Todo: still needs implementation")
   void
       testDivision_When_FirstNumberIsDividedByZero_ShouldReturnArithmeticException() {
     fail();
