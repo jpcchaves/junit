@@ -84,4 +84,31 @@ public class SimpleMathTest {
 
     assertNotEquals(unexpected, result);
   }
+
+  @Test
+  void testDivision() {
+
+    SimpleMath sm = new SimpleMath();
+
+    double firstNumber = 6.2D;
+    double secondNumber = 2D;
+
+    Double result = sm.division(firstNumber, secondNumber);
+
+    Double expected = 3.1D;
+
+    Double unexpected = 9.2D;
+
+    assertNotNull(result);
+
+    assertEquals(
+        expected,
+        result,
+        () ->
+            String.format(
+                "%s / %s did not " + "produce %s",
+                firstNumber, secondNumber, expected));
+
+    assertNotEquals(unexpected, result);
+  }
 }
