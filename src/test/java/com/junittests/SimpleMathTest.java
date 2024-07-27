@@ -114,10 +114,26 @@ public class SimpleMathTest {
   @DisplayName(
       "Test division when first number is divided by zero should return"
           + " ArithmeticException")
-  @Disabled("Todo: still needs implementation")
   void
       testDivision_When_FirstNumberIsDividedByZero_ShouldReturnArithmeticException() {
-    fail();
+
+    // Given
+    double firstNumber = 6.2D;
+    double secondNumber = 0D;
+
+    String expectedExMessage = "Impossible to divide by zero";
+
+    ArithmeticException actual =
+        assertThrows(
+            ArithmeticException.class,
+            // when & then
+            () -> sm.division(firstNumber, secondNumber),
+            () -> "Divided by zero should throw ArithmeticException");
+
+    assertEquals(
+        expectedExMessage,
+        actual.getMessage(),
+        () -> "Unexpected Arithmetic Exception message");
   }
 
   @Test
