@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.*;
 
+@Order(1)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SimpleMathTest {
   SimpleMath sm;
 

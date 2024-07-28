@@ -1,10 +1,12 @@
 package com.junittests;
 
 import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-@TestMethodOrder(MethodOrderer.MethodName.class)
+@Order(2)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class MethodOrderByNameTest {
 
   @Test

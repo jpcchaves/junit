@@ -4,11 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.*;
 
+@Order(3)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ArraysCompareTest {
 
   @DisplayName("Sort array test")
