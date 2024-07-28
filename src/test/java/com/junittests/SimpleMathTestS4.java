@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class SimpleMathTestS4 {
   SimpleMath sm;
@@ -51,5 +52,12 @@ public class SimpleMathTestS4 {
         Arguments.of(6.2D, 2D, 3.1D),
         Arguments.of(71D, 14D, 5.07D),
         Arguments.of(18.3D, 3.1D, 5.90D));
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"Pele", "Senna"})
+  void testValueSource(String firstName) {
+    System.out.println(firstName);
+    assertNotNull(firstName);
   }
 }
