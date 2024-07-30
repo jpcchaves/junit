@@ -21,4 +21,7 @@ public class CourseServiceStub implements CourseService {
         "Kotlin para DEV's Java: Aprenda a Linguagem Padrão do Android",
         "Microsserviços do 0 com Spring Cloud, Kotlin e Docker");
   }
+
+  @Override
+  public void deleteCourse(String course) {}
 }

@@ -1,6 +1,8 @@
 package com.junittests;
 
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.BDDMockito.*;
 import static org.mockito.Mockito.*;
 
 import com.junittests.business.CourseBusiness;
@@ -8,6 +10,7 @@ import com.junittests.service.CourseService;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class CourseBusinessMockTest {
@@ -50,5 +53,23 @@ class CourseBusinessMockTest {
 
     // Then
     assertEquals(4, filteredCourses.size());
+  }
+
+  @DisplayName(
+      "Delete courses not related to spring using mockito verify should call"
+          + " method")
+  @Test
+  void
+      testsDeleteCoursesNotRelatedToSpring_UsingMockitoVerify_ShouldCallMethod_deleteCourses() {
+
+    // Given
+    given(mockService.retrieveCourses("Joao")).willReturn(courses);
+
+    // When
+    business.deleteCoursesNotRelatedToSpring("Joao");
+
+    // Then
+    verify(mockService)
+        .deleteCourse("Agile Desmistificado com Scrum, XP, Kanban e Trello");
   }
 }
