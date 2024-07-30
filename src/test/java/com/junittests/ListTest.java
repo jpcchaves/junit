@@ -1,6 +1,7 @@
 package com.junittests;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.BDDMockito.*;
 import static org.mockito.Mockito.*;
 
 import java.util.List;
@@ -40,7 +41,7 @@ public class ListTest {
     // Given
     List list = mock(List.class);
 
-    when(list.get(0)).thenReturn("Joao");
+    given(list.get(0)).willReturn("Joao");
 
     // When & Then
     assertEquals("Joao", list.get(0));
@@ -53,7 +54,7 @@ public class ListTest {
     List list = mock(List.class);
 
     // When
-    when(list.get(anyInt())).thenThrow(new RuntimeException("Foo Bar!!"));
+    given(list.get(anyInt())).willThrow(new RuntimeException("Foo Bar!!"));
 
     // Then
     assertThrows(RuntimeException.class, () -> list.get(anyInt()));
