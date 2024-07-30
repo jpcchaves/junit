@@ -86,15 +86,22 @@ public class PersonServiceTest {
 
     // Given
     person.setEmail(null);
+    final String expectedExMsg = "Email cannot be null or empty";
 
     // Assert
-    assertThrows(
-        IllegalArgumentException.class,
-        () ->
-            // When
-            service.createPerson(person),
-        () ->
-            "When create person with null email should return"
-                + " IllegalArgumentException!");
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                // When
+                service.createPerson(person),
+            () ->
+                "When create person with null email should return"
+                    + " IllegalArgumentException!");
+
+    assertEquals(
+        expectedExMsg,
+        exception.getMessage(),
+        () -> "The exception message didn't match the expected");
   }
 }
