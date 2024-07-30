@@ -47,6 +47,19 @@ public class ListTest {
   }
 
   @Test
+  void testMockingList_WhenGetIsCalled_ThrowsException() {
+
+    // Given
+    List list = mock(List.class);
+
+    // When
+    when(list.get(anyInt())).thenThrow(new RuntimeException("Foo Bar!!"));
+
+    // Then
+    assertThrows(RuntimeException.class, () -> list.get(anyInt()));
+  }
+
+  @Test
   void testMockingList_WhenGetIsCalledWithArgumentMatcher_ShouldReturnJoao() {
 
     // Given
