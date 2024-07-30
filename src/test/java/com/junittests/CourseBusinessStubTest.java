@@ -8,7 +8,7 @@ import com.junittests.stubs.CourseServiceStub;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-class CourseBusinessTest {
+class CourseBusinessStubTest {
 
   @Test
   void testCoursesRelatedToSpring_When_UsingStub() {
