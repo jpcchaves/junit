@@ -1,5 +1,7 @@
 package com.junittests;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.*;
 import static org.mockito.Mockito.*;
@@ -69,6 +71,6 @@ public class ListTest {
     when(list.get(anyInt())).thenReturn("Joao");
 
     // When & Then
-    assertEquals("Joao", list.get(anyInt()));
+    assertThat(list.get(anyInt()), is("Joao"));
   }
 }
